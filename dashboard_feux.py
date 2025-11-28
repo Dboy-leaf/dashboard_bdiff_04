@@ -176,14 +176,16 @@ evolution_com = feux_com.groupby('Année').agg(
 ).reset_index() # On reset index pour conserver les noms des colonnes determiné
 
 
-evolution_long = pd.melt(
+# Création des graphiques interactif comparaison entre surf et nombre par commune
+evolution_long = pd.melt(   # .melt permet de mettre en forme deux données dans deux champs différents
     evolution_com, 
     id_vars=['Année'],
-    value_vars=['Nombre_par_com', 'Surface_par_com'],
+    value_vars=['Nombre_par_com', 'Surface_par_com'], # Les deux champs
     var_name='Métrique',
     value_name='Valeur'
 )
 
+# Mise en page du graphique 
 fig_evol_com_final = px.line(
     evolution_long, 
     x='Année', 
