@@ -15,8 +15,8 @@ st.header("Cartographie des incendies par communes.")
 def load_data(): 
    
     # Chargement de la couche communes depuis un GeoPackage. (on a vérifie en amont le nom de la couche correspondante.)
-    gpk_path = 'ADE_4-0_GPKG_LAMB93_FXX-ED2025-11-20.gpkg'
-    com = gpd.read_file(gpk_path, layer='commune')
+    gpk_path = 'communes_04.gpkg'
+    com = gpd.read_file(gpk_path)
     com = com.to_crs("EPSG:4326") # On reprojette sur le bon CRS. 
     com['code_insee'] = com['code_insee'].astype(str) # On s'assure que le 'code_insee' soit en type str
 
