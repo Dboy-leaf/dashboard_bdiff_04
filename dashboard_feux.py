@@ -199,3 +199,7 @@ fig_evol_com_final = px.line(
 
 st.plotly_chart(fig_evol_com_final, width='stretch')
 
+st.divider()
+
+st.write("Tom LAURENZATI, BDIFF, IGN")
+st.write("Dans le cadre d'un rendu de MASTER 2 en Géomatique et modélisation spatial a l'université d'Aix-Marseille")
